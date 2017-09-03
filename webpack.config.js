@@ -22,22 +22,12 @@ module.exports = {
 
     module: {
         loaders: [
-            {
-				loader: "babel-loader",
-				test: /\.js$|\.jsx$/,
-				exclude: /node_modules/,
-				query: {
-					presets: ["es2015", "react"]
-                }
-            },
+            // There are two types of loaders for TypeScript files:
+            // ts-loader: needs to work with babel, and some babel presets and plugins.
+            // awesome-typescript-loader: can work without babel because babel is already integrated.
             {
                 loader: "awesome-typescript-loader",
                 test: /\.ts$|\.tsx$/,
-                exclude: /node_modules/
-            },
-            {
-                loader: "source-map-loader",
-                test: /\.js$/,
                 exclude: /node_modules/
             }
         ]
@@ -50,6 +40,7 @@ module.exports = {
             sourceMap: true
 		}),
 
+        // Serve production build React.
 		new webpack.DefinePlugin({
 			"process.env": {
 				"NODE_ENV": JSON.stringify("production")

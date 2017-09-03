@@ -51,7 +51,7 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "include": [
-    "./src/" // This can potentially remove "Cannot use JSX unless the '--jsx' flag is provided" warning.
+    "./src/**/*" // This can potentially remove "Cannot use JSX unless the '--jsx' flag is provided" warning.
   ],
   "exclude": [
     "node_modules"
